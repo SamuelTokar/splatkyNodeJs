@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Seznam aut</h1>
+        <% cars.forEach(car => { %>
+        <li>
+            <strong><%= car.name %></strong> - <%= car.price %> Kč
+            <form action="/delete/<%=car._id%>"
+                method="POST"
+                style="display:inline;">
+                <button type="submit">Smazat</button>
+            </form>
+            <a href="/edit/<%=car._id%>">
+                <button>Upravit</button>
+            </a>
+        </li>
+        <% }) %>
+        <a href="/form-admin">Form</a>
+    </body>
+</html>
